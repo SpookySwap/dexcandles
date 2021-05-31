@@ -26,7 +26,7 @@ export function handleSwap(event: Swap): void {
     let tokens = concat(pair.token0, pair.token1);
     let timestamp = event.block.timestamp.toI32();
 
-    let periods: i32[] = [5*60, 15*60, 60*60, 4*60*60, 24*60*60, 7*24*60*60];
+    let periods: i32[] = [1*60, 5*60, 15*60, 60*60, 4*60*60, 24*60*60];
     for (let i = 0; i < periods.length; i++) {
         let time_id = timestamp / periods[i];
         let candle_id = concat(concat(Bytes.fromI32(time_id), Bytes.fromI32(periods[i])), tokens).toHex();

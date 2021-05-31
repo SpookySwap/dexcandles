@@ -1,16 +1,16 @@
 specVersion: 0.0.2
-description: DEX trades candles (5m/15m/1h/4h/1d/1w)
-repository: https://github.com/1inch-exchange
+description: DEX trades candles (1m/5m/15m/1h/4h/1d)
+repository: https://github.com/SpookySwap/dexcandles
 schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum/contract
     name: Factory
-    network: mainnet
+    network: fantom
     source:
-      address: '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f'
+      address: '0x152eE697f2E276fA89E96742e9bB9aB1F2E61bE3'
       abi: Factory
-      startBlock: 10000834
+      startBlock: 3795376
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.3
@@ -27,7 +27,7 @@ dataSources:
 templates:
   - kind: ethereum/contract
     name: Pair
-    network: mainnet
+    network: fantom
     source:
       abi: Pair
     mapping:
